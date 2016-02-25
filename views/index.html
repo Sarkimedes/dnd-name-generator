@@ -3,13 +3,18 @@
     <head>
         <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
         <script type="text/javascript" src="../app/controllers/names-controller.js"></script>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
         <title>Main</title>
     </head>
     <body>
-        <div ng-controller="NamesController">
+        <div ng-controller="NamesController" ng-init="generate()" class="container" >
+            <div class="page-header">
             <h1><!--TODO: Come up with a better title -->The Ched Maker</h1>
+            </div>
             <p>{{ name }}</p>
-            <input type="submit" value="Generate" ng-click="generate()" />
+            <p>{{ gender }}</p>
+            <p>{{ race }}</p>
+            <input type="submit" value="Generate" ng-click="generate()" class="btn btn-default" />
         </div>
     </body>
 </html>
