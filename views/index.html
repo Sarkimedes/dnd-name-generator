@@ -1,20 +1,30 @@
 <!DOCTYPE html>
-<html ng-app="chedMakerApp">
+<html ng-app="ChedMakerApp">
     <head>
+        <script type="text/javascript" src="../app/app.js"></script>
         <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
         <script type="text/javascript" src="../app/controllers/names-controller.js"></script>
+        <script type="text/javascript" src="../app/controllers/settings-controller.js"></script>
         <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
         <title>Main</title>
     </head>
     <body>
         <div ng-controller="NamesController" ng-init="generate()" class="container" >
             <div class="page-header">
-            <h1><!--TODO: Come up with a better title -->The Ched Maker</h1>
+                <h1>The Ched Maker</h1>
             </div>
             <p>{{ name }}</p>
             <p>{{ gender }}</p>
             <p>{{ race }}</p>
             <input type="submit" value="Generate" ng-click="generate()" class="btn btn-default" />
+        </div>
+        <div id="settings-div" class="container" ng-controller="SettingsController">
+            <h2>Settings</h2>
+            <input type="checkbox" ng-model="preferChed" ng-change="updateChed()" id="preferChedToggle" />
+            <label for="preferChedToggle">Prefer Ched</label>
+            <h3>Genders</h3>
+            <label>Standard <input type="radio" id="standardGenderButton" ng-model="genderOption" value="standard" ng-change="updateGender()"/></label>
+            <label>Tumblr <input type="radio" id="tumblrGenderButton" ng-model="genderOption" value="tumblr" ng-change="updateGender()" /></label>
         </div>
     </body>
 </html>
