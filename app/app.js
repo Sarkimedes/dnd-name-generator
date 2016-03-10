@@ -1,2 +1,2 @@
 // Global settings
-var debug = true;
+var debug = false;

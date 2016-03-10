@@ -17,7 +17,7 @@
             if (debug && !names) throw 'Names service not found';
             names.updateChed($scope.preferChed);
         }
-        $scope.genderOption = 'standard';
+        $scope.genderOption = 'tumblr';
         $scope.updateGender = function () {
             generateGender.updateGender($scope.genderOption);
         }

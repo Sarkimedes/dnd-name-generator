@@ -86,7 +86,7 @@
         })();
     }).
     factory('generateGender', function() {
-        var genderList = [ 'Male', 'Female' ];
+        var standardGenderList = [ 'Male', 'Female' ];
         var tumblrGenderList = ['Male', 'Female', 'Intersex', 'Transman', 'Transwoman',
         'Abimegender',
 'Absorgender',
@@ -397,7 +397,9 @@
 'Xoy',
 'Xumgender',
 'Zodiacgender'
-]
+]; 
+        var genderList = tumblrGenderList;
+                
         var generateGender = function () {
             return genderList[Math.floor(Math.random() * genderList.length)];
         }
@@ -405,7 +407,7 @@
             if (debug) console.info('Calling update gender with gender option ' + genderOptionValue)
             switch (genderOptionValue) {
                 case 'standard':
-                    genderList = ['male', 'female'];
+                    genderList = standardGenderList;
                     break;
                 case 'tumblr':
                     genderList = tumblrGenderList;
