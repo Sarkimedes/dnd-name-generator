@@ -1,7 +1,6 @@
 (function() { 
     var app = angular.module('ChedMakerApp');
-    app.
-    factory('generateGender', function() {
+    app.factory('generateGender', function() {
         var standardGenderList = [ 'Male', 'Female' ];
         var tumblrGenderList = ['Male', 'Female', 'Intersex', 'Transman', 'Transwoman',
         'Abimegender',
